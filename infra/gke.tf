@@ -1,11 +1,11 @@
-resource "google_container_cluster" "ts_gke_cluster" {
-  name     = "ts-gke-cluster"
+resource "google_container_cluster" "ms_gke_cluster" {
+  name     = "ms-gke-cluster"
   location = var.region
 
   enable_autopilot = true
 
-  network    = google_compute_network.ts_vpc.name
-  subnetwork = google_compute_subnetwork.ts_subnet_public_a.name
+  network    = google_compute_network.ms_vpc.name
+  subnetwork = google_compute_subnetwork.ms_subnet_public_a.name
 
   ip_allocation_policy {
     cluster_secondary_range_name  = "pods"
@@ -14,4 +14,3 @@ resource "google_container_cluster" "ts_gke_cluster" {
 
   deletion_protection = false
 }
-

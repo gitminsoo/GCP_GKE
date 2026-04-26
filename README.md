@@ -15,8 +15,8 @@ GCP GKE Autopilot 기반 GitOps CI/CD 과제 프로젝트입니다.
 |---|---|
 | GCP Project | `gcp-assign-494513` |
 | Region | `asia-northeast3` |
-| GKE Cluster | `ts-gke-cluster` |
-| VPC | `ts-vpc` |
+| GKE Cluster | `ms-gke-cluster` |
+| VPC | `ms-vpc` |
 | Artifact Registry | `gke-gitops-images` |
 | Kubernetes Namespace | `gke-dev` |
 
@@ -56,7 +56,7 @@ terraform output github_actions_service_account
 GKE 연결:
 
 ```bash
-gcloud container clusters get-credentials ts-gke-cluster --region=asia-northeast3
+gcloud container clusters get-credentials ms-gke-cluster --region=asia-northeast3
 kubectl create namespace gke-dev
 kubectl create namespace gke-prod
 ```
