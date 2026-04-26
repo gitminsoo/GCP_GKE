@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: gke-web
-          image: asia-northeast3-docker.pkg.dev/gcp-assign-494513/gke-gitops-images/gke-web:latest
+          image: asia-northeast3-docker.pkg.dev/gcp-assign-494513/gke-gitops-images/gke-web:35b1ba72316c65a8b1f37a97ef2de0f2da34d271
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
