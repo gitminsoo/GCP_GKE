@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: fortune-web
-          image: asia-northeast3-docker.pkg.dev/gcp-assign-494513/gke-gitops-images/fortune-web:latest
+          image: asia-northeast3-docker.pkg.dev/gcp-assign-494513/gke-gitops-images/fortune-web:230d499b61d73b40ba5d10a0a6fe4f5c4b559143
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
