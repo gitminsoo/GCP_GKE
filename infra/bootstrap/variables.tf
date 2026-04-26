@@ -12,5 +12,4 @@ variable "region" {
 variable "state_bucket_name" {
   description = "GCS bucket name for Terraform remote state"
   type        = string
-  default     = "minsoogke0426"
 }
