@@ -4,7 +4,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        app_name = os.getenv("APP_NAME", "Fortune Web App")
+        app_name = os.getenv("APP_NAME", "GKE Web App")
         app_env = os.getenv("APP_ENV", "development")
         app_version = os.getenv("APP_VERSION", "1.0")
 
@@ -25,4 +25,3 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     server = ThreadingHTTPServer(("0.0.0.0", 8080), Handler)
     server.serve_forever()
-

@@ -18,7 +18,7 @@ GCP GKE Autopilot 기반 GitOps CI/CD 과제 프로젝트입니다.
 | GKE Cluster | `ts-gke-cluster` |
 | VPC | `ts-vpc` |
 | Artifact Registry | `gke-gitops-images` |
-| Kubernetes Namespace | `fortune-dev` |
+| Kubernetes Namespace | `gke-dev` |
 
 실제 환경별 입력값은 [INPUTS.md](INPUTS.md)에 정리되어 있습니다.
 
@@ -57,8 +57,8 @@ GKE 연결:
 
 ```bash
 gcloud container clusters get-credentials ts-gke-cluster --region=asia-northeast3
-kubectl create namespace fortune-dev
-kubectl create namespace fortune-prod
+kubectl create namespace gke-dev
+kubectl create namespace gke-prod
 ```
 
 ArgoCD 설치 후 `manifests/gke-dev` 경로를 Application으로 등록하면 됩니다.

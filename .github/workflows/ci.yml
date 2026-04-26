@@ -13,7 +13,7 @@ env:
   PROJECT_ID: gcp-assign-494513
   REGION: asia-northeast3
   REPOSITORY: gke-gitops-images
-  IMAGE_NAME: fortune-web
+  IMAGE_NAME: gke-web
 
 jobs:
   build-and-push:
@@ -54,12 +54,12 @@ jobs:
       - name: Update deployment image tag
         run: |
           IMAGE_URI="$REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:${{ github.sha }}"
-          sed -i "s|image: .*fortune-web:.*|image: $IMAGE_URI|" manifests/gke-dev/deployment.yaml
+          sed -i "s|image: .*gke-web:.*|image: $IMAGE_URI|" manifests/gke-dev/deployment.yaml
 
       - name: Commit manifest update
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add manifests/gke-dev/deployment.yaml
-          git commit -m "chore: update fortune-web image to ${{ github.sha }}" || exit 0
+          git commit -m "chore: update gke-web image to ${{ github.sha }}" || exit 0
           git push

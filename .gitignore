@@ -4,4 +4,6 @@
 terraform.tfvars
 INPUTS.md
 pass.md
+ref/
+ref.zip
 .DS_Store

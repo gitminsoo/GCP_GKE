@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: fortune-ingress
-  namespace: fortune-dev
+  name: gke-ingress
+  namespace: gke-dev
   annotations:
     kubernetes.io/ingress.class: "gce"
 spec:
@@ -13,7 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: fortune-web-svc
+                name: gke-web-svc
                 port:
                   number: 80
-
