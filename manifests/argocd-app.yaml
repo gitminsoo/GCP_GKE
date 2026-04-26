@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fortune-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gitminsoo/GCP_GKE.git
+    targetRevision: main
+    path: manifests/gke-dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fortune-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
